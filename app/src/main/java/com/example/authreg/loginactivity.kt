@@ -23,7 +23,15 @@ class loginactivity : AppCompatActivity() {
          createaccount = findViewById(R.id.btn_createacc)
 
        login.setOnClickListener {
-          var gotologin = Intent(this,loginactivity)
+          var address = email.text.toString().trim()
+          var access = password.text.toString().trim()
+
+           //validate
+           if (address.isEmpty()|| access.isEmpty()){
+               Toast.makeText(this, "Check Your Fields", Toast.LENGTH_SHORT).show()
+           } else{
+
+           }
 
 
        }
