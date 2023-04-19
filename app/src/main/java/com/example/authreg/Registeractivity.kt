@@ -1,6 +1,7 @@
 package com.example.authreg
 
 import android.content.Context
+import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,6 +15,7 @@ class Registeractivity : AppCompatActivity() {
     private lateinit var email:EditText
     private lateinit var password:EditText
     private lateinit var createaccount:Button
+    private lateinit var login:Button
 
     private lateinit var db: SQLiteDatabase
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +27,11 @@ class Registeractivity : AppCompatActivity() {
         email = findViewById(R.id.edtemail)
         password = findViewById(R.id.edtpassword)
         createaccount = findViewById(R.id.btncreate)
+        login = findViewById(R.id.btnlog)
+
+        login.setOnClickListener {
+
+        }
 
 
         db = openOrCreateDatabase("WANDERA", Context.MODE_PRIVATE, null)
@@ -42,7 +49,9 @@ class Registeractivity : AppCompatActivity() {
             } else{
                 db.execSQL("INSERT INTO users VALUES(  '\"+jina1_edt+\"', '\"+jina2_edt+\"', '\"+arafa_edt+\"', '\"+nenosiri_edt+\"')")
                 Toast.makeText(this, "User Created Successfully", Toast.LENGTH_SHORT).show()
-              
+
+                var gotologin = Intent(this,loginactivity::class.java)
+                startActivity(gotologin)
             }
         }
 
