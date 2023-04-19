@@ -11,7 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AuthReg"
         tools:targetApi="31">
-
+        <activity
+            android:name=".dashboardactivity"
+            android:exported="false" />
+        <activity
+            android:name=".loginactivity"
+            android:exported="false" />
         <activity
             android:name=".Registeractivity"
             android:exported="true">
